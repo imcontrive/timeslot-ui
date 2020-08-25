@@ -8,10 +8,12 @@ class App extends Component {
   componentDidMount() {
     var getFromLocalStorage = JSON.parse(localStorage.getItem("timeSlotList"));
     console.log(getFromLocalStorage);
-    this.props.dispatch({
-      type: "GET_FROM_LOCAL_STORAGE",
-      payload: getFromLocalStorage
-    });
+    if (getFromLocalStorage) {
+      this.props.dispatch({
+        type: "GET_FROM_LOCAL_STORAGE",
+        payload: getFromLocalStorage
+      });
+    }
   }
 
   render() {

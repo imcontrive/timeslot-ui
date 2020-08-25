@@ -87,7 +87,7 @@ class OnDataEntry extends Component {
             />
             <input
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-primary cancel-btn"
               value="Cancel"
               onClick={this.cancel}
             />

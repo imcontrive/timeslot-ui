@@ -16,9 +16,9 @@ class Home extends Component {
     const { timeslots } = this.props;
     console.log("this.timeslots", this.props);
     return (
-      <div className="home-wrapper">
+      <div className="primary-wrapper">
         {/* <h2 className="heading">Time Slots UI</h2> */}
-        <div className="timeslots">
+        <div className="secondary-wrapper">
           {timeslots
             ? timeslots.map(item => (
                 <NavLink
