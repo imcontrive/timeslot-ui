@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class OnDataEntry extends Component {
+class FormContainer extends Component {
   state = {
     firstName: "",
     lastName: "",
@@ -10,7 +10,6 @@ class OnDataEntry extends Component {
 
   componentDidMount() {
     const id = this.props.location.state._slotId;
-    console.log(id);
     const timeslotsData = this.props.timeslots;
     const timeslot = timeslotsData.filter(item => item._id === id);
     if (timeslot[0].info) {
@@ -28,56 +27,67 @@ class OnDataEntry extends Component {
   // Add reducer to save user info.
   handleSave = e => {
     var data = this.state;
-    data = { ...data, _slotId: this.props.location.state._slotId };
-
-    // console.log(this.props.location.state._slotId);
-    if (data) {
-      this.props.dispatch({ type: "SAVE_SLOT", payload: data });
+    if (this.state.firstName && this.state.lastName && this.state.mobile) {
+      data = { ...data, _slotId: this.props.location.state._slotId };
+      this.props.dispatch({ type: "SAVE_TIME_SLOT", payload: data });
+      this.props.history.push("/");
+    } else {
+      alert("Please enter required details");
     }
-    this.props.history.push("/");
   };
 
   cancel = () => {
     this.props.history.push("/");
   };
   render() {
-    console.log(this.props.timeslots);
+    let timeslots = this.props.timeslots;
+    let slot = timeslots
+      ? timeslots.filter(item => {
+          if (item._id === this.props.location.state._slotId) {
+            return item;
+          }
+        })
+      : "";
+
     return (
-      <div>
+      <div className="form-container">
+        <h2 className="heading">
+          Sign Up for {slot ? slot[0].timeRange : ""} Time Slot
+        </h2>
         <div className="signup-card">
-          <p>
+          <div>
             <label htmlFor="firstname">First Name</label>
             <input
               type="text"
               className="form-input"
               name="firstName"
-              placeholder="Enter firstName"
+              placeholder="Please enter  your firstname"
               value={this.state.firstName}
               onChange={this.handleChange}
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
               className="form-input"
               name="lastName"
-              placeholder="Enter  lastName"
+              placeholder="Please Enter your lastname"
               value={this.state.lastName}
               onChange={this.handleChange}
             />
-          </p>
-          <p>
-            <label htmlFor="mobile">Mobile</label>
+          </div>
+          <div>
+            <label htmlFor="mobile">Mobile No.</label>
             <input
               type="text"
               className="form-input"
               name="mobile"
-              placeholder="Enter  mobile Number"
+              placeholder="Please enter mobile Number"
               value={this.state.mobile}
               onChange={this.handleChange}
             />
-          </p>
+          </div>
           <div className="control-btn">
             <input
               type="submit"
@@ -99,10 +109,9 @@ class OnDataEntry extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state, "state");
   return {
     timeslots: state.reducer.slots
   };
 };
 
-export default connect(mapStateToProps)(OnDataEntry);
+export default connect(mapStateToProps)(FormContainer);

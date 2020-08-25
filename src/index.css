@@ -128,24 +128,20 @@ table {
   border-spacing: 0;
 }
 
-/* Main CSS */
+/****************************
+************* Main CSS *****/
 body {
   font-family: "Roboto", sans-serif;
+  background: #0e1e24;
+  color: #ffffff;
 }
 
 .primary-wrapper {
-}
-.heading {
-  text-align: center;
-  font-size: 3rem;
-  padding: 50px 0;
-  color: #00b29d;
-  font-family: "Roboto";
-}
-
-.secondary-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.center {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -153,9 +149,9 @@ body {
   text-align: center;
 }
 
-.btn {
-  background-color: #ccf0ed;
-  color: #00b29d;
+.slot-btn {
+  background-color: white;
+  color: #2e3c42;
   width: 100%;
   border-radius: 5px;
   font-weight: 500;
@@ -169,12 +165,10 @@ body {
   border: 1.25px solid white;
 }
 
-.btn:hover {
-  /* When not available
-  */
-
-  border: 1.25px solid #68d9cb;
-  background: white;
+.slot-btn:hover {
+  border: 1.25px solid #7d8589;
+  background: #0b181d;
+  color: #7d8589;
 }
 
 .active {
@@ -189,31 +183,38 @@ body {
 
 /* form data */
 
-.signup-card {
-  max-width: 300px;
-  width: 100%;
-  font-size: 1.25rem;
+.form-container {
+  width: 350px;
+  padding: 30px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 30px;
-  /* font-family: "Roboto", sans-serif; */
   border-radius: 5px;
-  box-shadow: 5px 5px 25px 5px rgba(213, 213, 211, 0.6);
+  box-shadow: 2px 2px 2px 2px #0b181d;
 }
 
-h2 {
-  font-weight: 500;
-  font-size: 3rem;
-  padding-bottom: 3rem;
-  color: #00b29d;
+.signup-card {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  color: #0b181d;
+}
+.heading {
+  color: #2e3c42;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 32px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
 
-p > label,
-p > .form-input,
+div > label,
+div > .form-input,
 .btn,
 .link_to_create {
   margin: 10px 5px;
@@ -221,10 +222,9 @@ p > .form-input,
 
 a {
   text-decoration: none;
-  color: #00b29d;
 }
 a:hover {
-  color: #2d9dff;
+  color: #2e3c42;
 }
 
 .form-input {
@@ -232,30 +232,29 @@ a:hover {
   height: 60px;
   padding-left: 15px;
   border-radius: 5px;
-  border: 1px solid #00b29d;
+  border: 1.25px solid #2e3c42;
   background-color: #fff;
 }
 
 input:focus {
-  border: 2px solid #00b29d;
+  border: 2px solid#2e3c42;
 }
 
 .btn-primary {
-  background-color: #00b29d;
-  border-color: #00b29d;
-  color: #fff;
-  width: 100%;
+  background-color: #e9ebeb;
+  border-color: #e9ebeb;
+  color: #0e1e24;
+  line-height: 20px;
+  text-transform: uppercase;
   height: 40px;
+  letter-spacing: 0.5px;
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 700;
+  border: 2px solid #e9ebeb;
 }
 
 .btn-primary:hover {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #00b29d;
-  background: transparent;
-  border: 2px solid #00b29d;
+  box-shadow: 0 0 0 2px #f4bb00;
   cursor: pointer;
 }
 

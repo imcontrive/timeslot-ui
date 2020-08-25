@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 import Home from "./components/Home";
-import OnDataEntry from "./components/OnDataEntry";
+import FormContainer from "./components/FormContainer";
 
 class App extends Component {
   componentDidMount() {
     var getFromLocalStorage = JSON.parse(localStorage.getItem("timeSlotList"));
-    console.log(getFromLocalStorage);
     if (getFromLocalStorage) {
       this.props.dispatch({
         type: "GET_FROM_LOCAL_STORAGE",
@@ -20,7 +19,7 @@ class App extends Component {
     return (
       <>
         <Route exact path="/" component={Home} />
-        <Route path="/slots" component={OnDataEntry} />
+        <Route path="/slots" component={FormContainer} />
       </>
     );
   }
