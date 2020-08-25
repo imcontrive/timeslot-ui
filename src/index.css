@@ -1,0 +1,268 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Main CSS */
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.home-wrapper {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  padding: 50px 0;
+  color: #00b29d;
+  font-family: "Roboto";
+}
+
+.timeslots {
+  display: flex;
+  flex-direction: column;
+  /* text-align: start; */
+}
+
+.btn {
+  background-color: #ccf0ed;
+  /* color: #414645; */
+  color: #424648;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 20px;
+  border: none;
+  font-family: "Roboto";
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 7px 0px;
+}
+
+.btn:hover {
+  /* When not available
+  */
+
+  border: 1.25px solid #68d9cb;
+  background: white;
+}
+
+.active {
+  background: red;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.active:hover {
+  background: red;
+}
+
+/* form data */
+
+.signup-card {
+  font-size: 1.25rem;
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  padding-bottom: 3rem;
+  color: #1a3878;
+  text-transform: uppercase;
+}
+
+p > label,
+p > .form-input,
+.btn,
+.link_to_create {
+  margin: 12px;
+}
+a {
+  text-decoration: none;
+  color: #234567;
+}
+a:hover {
+  color: #2d9dff;
+}
+
+.form-input {
+  width: 100%;
+  height: 60px;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid #234567;
+  background-color: #fff;
+}
+
+input:focus {
+  border: 2px solid #234567;
+}
+
+.btn-primary {
+  background-color: #234567;
+  border-color: #234567;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1a3878;
+  background: transparent;
+  border: 2px solid #1a3878;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.control-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
