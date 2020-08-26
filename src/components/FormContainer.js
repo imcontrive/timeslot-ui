@@ -50,10 +50,11 @@ class FormContainer extends Component {
       : "";
 
     return (
-      <div className="form-container">
-        <h2 className="heading">
-          Sign Up for {slot ? slot[0].timeRange : ""} Time Slot
-        </h2>
+      <div className="form-container center">
+        <div className="heading">
+          <h2>Sign Up</h2>
+          <h3>for {slot ? slot[0].timeRange : ""} Time Slot</h3>
+        </div>
         <div className="signup-card">
           <div>
             <label htmlFor="firstname">First Name</label>
@@ -72,7 +73,7 @@ class FormContainer extends Component {
               type="text"
               className="form-input"
               name="lastName"
-              placeholder="Please Enter your lastname"
+              placeholder="Please enter your lastname"
               value={this.state.lastName}
               onChange={this.handleChange}
             />
