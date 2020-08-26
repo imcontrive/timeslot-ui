@@ -52,7 +52,7 @@ class FormContainer extends Component {
     return (
       <div className="form-container center">
         <div className="heading">
-          <h2>Sign Up</h2>
+          <h2>{slot[0].info ? "Edit Details" : "Sign Up"}</h2>
           <h3>for {slot ? slot[0].timeRange : ""} Time Slot</h3>
         </div>
         <div className="signup-card">
